@@ -1,6 +1,11 @@
 {
   "name": "you/webpush-vendor",
   "require": {
-    "minishlink/web-push": "^9.0"
+    "minishlink/web-push": "^6.0"
+  },
+  "config": {
+    "platform": {
+      "php": "7.4.33"
+    }
   }
 }
