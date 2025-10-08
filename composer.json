@@ -1,0 +1,6 @@
+{
+  "name": "you/webpush-vendor",
+  "require": {
+    "minishlink/web-push": "^9.0"
+  }
+}
