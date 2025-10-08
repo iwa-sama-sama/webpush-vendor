@@ -1,11 +1,13 @@
 {
   "name": "you/webpush-vendor",
+  "type": "project",
   "require": {
-    "minishlink/web-push": "^8.0"
+    "php": "^8.1",
+    "minishlink/web-push": "^9.0"
   },
   "config": {
-    "platform": {
-      "php": "7.4.33"
-    }
+    "platform": { "php": "8.2.0" },      // 依存解決を常にPHP8.2基準に固定
+    "optimize-autoloader": true,
+    "sort-packages": true
   }
 }
