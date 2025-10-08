@@ -1,0 +1,32 @@
+name: Build vendor
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          tools: composer
+
+      - name: Install dependencies (no dev)
+        run: composer install --no-dev --prefer-dist --no-progress --no-interaction
+
+      - name: Zip vendor
+        run: |
+          zip -r vendor.zip vendor composer.json composer.lock
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: vendor-zip
+          path: vendor.zip
