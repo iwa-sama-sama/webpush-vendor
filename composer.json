@@ -2,5 +2,10 @@
   "name": "you/webpush-vendor",
   "require": {
     "minishlink/web-push": "^8.0"
+  },
+  "config": {
+    "platform": {
+      "php": "7.4.33"
+    }
   }
 }
